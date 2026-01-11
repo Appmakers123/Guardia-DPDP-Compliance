@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Guardia - DPDP Compliance Engine</title>
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Real Google Identity Services SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body { 
+          font-family: 'Plus Jakarta Sans', sans-serif; 
+          -webkit-tap-highlight-color: transparent;
+          overscroll-behavior-y: contain;
+        }
+        .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+        .safe-top { padding-top: env(safe-area-inset-top); }
+        @keyframes slide-up {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-up { animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        
+        /* Premium Typography for Act Content */
+        .prose {
+          max-width: 100%;
+          color: #334155;
+          line-height: 1.8;
+          font-size: 1rem;
+        }
+        .prose h1, .prose h2, .prose h3 { 
+          color: #0f172a; 
+          font-weight: 800; 
+          letter-spacing: -0.025em;
+          margin-top: 1.75rem !important;
+          margin-bottom: 0.75rem !important;
+        }
+        .prose h3 { 
+          font-size: 1.15rem; 
+          border-bottom: 2px solid #f1f5f9; 
+          padding-bottom: 0.5rem;
+          color: #4f46e5;
+        }
+        .prose p { margin-bottom: 1rem; }
+        .prose strong { color: #1e293b; font-weight: 700; }
+        .prose ul, .prose ol { 
+          margin-top: 1rem; 
+          margin-bottom: 1rem; 
+          padding-left: 0;
+        }
+        .prose li { 
+          position: relative; 
+          padding-left: 1.5rem; 
+          margin-bottom: 0.5rem;
+          list-style: none;
+        }
+        .prose li::before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: #6366f1;
+          font-weight: 900;
+        }
+        .prose blockquote { 
+          border-left: 4px solid #6366f1; 
+          background: #f8fafc;
+          padding: 1rem 1.5rem;
+          border-radius: 0 1rem 1rem 0;
+          font-style: normal;
+          color: #475569;
+          font-weight: 500;
+          margin: 1.5rem 0;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "marked": "https://esm.sh/marked@^12.0.0"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed', err));
+        });
+      }
+    </script>
+</body>
+</html>

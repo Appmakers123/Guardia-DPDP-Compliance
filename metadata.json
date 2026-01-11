@@ -1,0 +1,8 @@
+{
+  "name": "Guardia Consent Management",
+  "description": "A comprehensive DPDP-compliant Consent Management System (CMS) featuring granular consent controls, user dashboards, grievance redressal, and immutable audit logging.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
