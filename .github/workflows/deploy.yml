@@ -5,14 +5,13 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write
-  pages: write        # ⚠️ REQUIRED (missing earlier)
-  id-token: write     # ⚠️ REQUIRED
+  contents: read
+  pages: write      # ← required
+  id-token: write   # ← required
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
