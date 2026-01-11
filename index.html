@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Guardia - DPDP Compliance Engine</title>
     <meta name="theme-color" content="#4f46e5">
-   <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="manifest" href="manifest.json">
- 
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Real Google Identity Services SDK -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -100,14 +100,11 @@
 <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
     <div id="root"></div>
     <script>
-      // if ('serviceWorker' in navigator) {
-      //   window.addEventListener('load', () => {
-      //     navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed', err));
-      //   });
-      // }
-        
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed', err));
+        });
+      }
     </script>
-    <script type="module" crossorigin src="/assets/index-[hash].js"></script>
-
 </body>
 </html>
